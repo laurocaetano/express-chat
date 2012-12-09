@@ -26,6 +26,8 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 
+io.sockets.on('connection', routes.chat);
+
 server.listen(app.get('port'), function(){
   console.log("Chat is listening on port " + app.get('port'));
 });
