@@ -7,8 +7,10 @@
   },
   "dependencies": {
     "express": "3.0.3",
-    "ejs": "*",
-    "mocha": "*",
-    "socket.io": "*"
+    "ejs": "0.8.3",
+    "mocha": "1.7.4",
+    "socket.io": "0.9.11",
+    "zombie": "1.4.1",
+    "expect.js": "0.2.0"
   }
 }
