@@ -1,7 +1,6 @@
-Simple chat application built on top of express framework and socket.io.
+Instructions
+-------------
 
-======
-- Instructions
--- First run npm install to install all the dependencies.
--- Run node app.js
--- access http://localhost:3000
+- First run npm install to install all the dependencies.
+- Run node app.js
+- Access http://localhost:3000
