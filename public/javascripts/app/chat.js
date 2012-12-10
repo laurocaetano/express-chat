@@ -9,6 +9,6 @@ Chat.prototype.sendMessage = function(message) {
   
 Chat.prototype.listen = function() {
   this.socket.on('messages', function(data) { 
-    $('#chat-messages').append(data);
+    $('.dl-horizontal').append('<dt>nickname</dt><dd>'+ data +'</dd>');
   });
 }

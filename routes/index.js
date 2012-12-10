@@ -4,7 +4,7 @@ exports.index = function(req, res){
 
 exports.chat = function(client) {
   client.on('messages', function(data) {
-    var message = data + "\n";
+    var message = data;
     client.broadcast.emit('messages', message);
   });
 };
