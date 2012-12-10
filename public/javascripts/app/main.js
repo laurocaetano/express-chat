@@ -1,15 +1,25 @@
+var app = app || {};
+
 (function() {
-  var chat = new Chat();
+  app.init = function() {
+    app.chat = new Chat();
+    app.chat.setNickname();
+    app.submitFormListener();
+  }
   
-  $('#chat-form').submit(function(e) {
-    e.preventDefault();
+  app.submitFormListener = function() {
+    $('#chat-form').submit(function(e) {
+      e.preventDefault();
     
-    var message = $('#chat-input');
+      var message = $('#chat-input');
     
-    if (message.val() === '') return;
-    chat.sendMessage(message.val());
+      if (message.val() === '') return;
+      app.chat.sendMessage(message.val());
     
-    $('.dl-horizontal').append('<dt>nickname</dt><dd>'+ message.val() +'</dd>');
-    message.val('');  
-  });
+      $('.dl-horizontal').append('<dt>'+ app.nickname +'</dt><dd>'+ message.val() +'</dd>');
+      message.val('');  
+    });
+  }
+  
+  app.init();
 })();

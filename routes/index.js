@@ -3,8 +3,12 @@ exports.index = function(req, res){
 };
 
 exports.chat = function(client) {
-  client.on('messages', function(data) {
-    var message = data;
-    client.broadcast.emit('messages', message);
+  client.on('messages', function(message) {
+    client.get('nickname', function(err, name) {
+      client.broadcast.emit('messages', {message: message, nickname: name});
+    });    
+  });
+  client.on('join', function(name) {
+    client.set('nickname', name);
   });
 };
